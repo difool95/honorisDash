@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="./images/NavHonoris.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+      <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="./public/multiselect-dropdown.js"></script>
+
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+  <script src="./public/jquery-3.6.1.min.js"></script>
+  <link rel="stylesheet" href="./css/dash.css" />
+  <link rel="stylesheet" href="./css/filter_multi_select.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+  <script src="./public/filter-multi-select-bundle.min.js"></script>
+
+</head>
+
+<body>
+    <div class="table">
+        <div class="table_header">
+            <p style="color: #41040b">Liste des utilisateurs</p>
+            <div>  
+                <input placeholder="nom utilisateur" type="text" name="q" id="q" value="" onkeyup="doSearch();"/>
+                <button id = "addnew" class="add_new" onclick="add_row()">+ Add New</button> 
+            <form action="/signout" method="POST">
+                <button type="submit" class="signout" id="signout">Sign Out</button>
+            </form>
+        </div>
+        </div>
+        <div class="table_section">
+            <table id="user_table">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Birth process</th>
+                        <th>Score</th>
+                        <th>UID</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+            </table>
+            <div class="center" style="display:none;" id="noresults"><p>(Pas d'utilisateurs avec le nom: "<span id="qt"></span>")</p></div>
+        </div>
+    </div>
+    <script src="dash.js"></script>
+
+       
+</body>
+
+</html>

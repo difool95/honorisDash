@@ -1,0 +1,34 @@
+{
+  "scripts": {
+		"start": "node server.js",
+    "deploy": "firebase deploy --only functions:api"
+	},
+  "main": "server.js",
+  "dependencies": {
+    "@firebase/app": "^0.7.31",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "express-useragent": "^1.0.15",
+    "firebase": "^9.9.3",
+    "firebase-admin": "^11.0.1",
+    "firebase-functions": "^3.18.0",
+    "jsonwebtoken": "^8.5.1",
+    "node-localstorage": "^2.2.1",
+    "path": "^0.12.7"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "pkg": {
+    "assets":[
+      "public/**/*",
+      "images/**/*",
+      "css/**/*"
+    ],
+    "targets":[
+      "node16"
+    ]
+  }
+}
