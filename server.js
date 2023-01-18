@@ -101,7 +101,7 @@ app.post('/signup', async(req, res) => {
 				console.log(`${doc.id} => ${doc.data()}`);
 				  count += 1;
 			});
-			if(count <= 100){
+			if(count <= 6){
 				const userr = {
 					email: req.body.email,
 					password: req.body.password
